@@ -1,5 +1,6 @@
 import React from 'react';
 import InputGroup from './InputGroup';
+import { useGlobals } from '@storybook/addons';
 
 export default {
     title: 'Test/InputGroup',
@@ -31,8 +32,7 @@ export default {
   focus: false,
   errorFocus: false,
   error: false,
-  styleGroup: { display: 'flex', flexDirection: 'column', gap: '8px' , width:'200px'},
-  style: { backgroundColor: 'white', color: 'dark-grey', borderRadius: '5px', height: '25px'},
+  styleGroup: { display: 'flex', flexDirection: 'column', gap: '8px'},
   placeholder: 'Input...',
 };
 
@@ -46,7 +46,6 @@ export default {
   Error.args={
     ...Default.args,
     error: true,
-    style:{backgroundColor: 'white', borderColor: 'red', color: 'dark-grey', borderRadius: '5px', height: '25px'}
   }
 
   export const ErrorFocus = Template.bind({});
@@ -59,11 +58,11 @@ export default {
   Disabled.args={
     ...Default.args,
     disabled: true,
-    style:{ backgroundColor: 'white', color: 'light-grey', borderRadius: '5px', height: '25px' },
   }
 
   export const Playground = Template.bind({});
   Playground.args = {
+  theme: 'light', 
   labelValue: 'Email',
   inputId: 'input-id',
   annotationValue: 'This is a hint text to help user.',
@@ -72,12 +71,6 @@ export default {
   focus: false,
   errorFocus: false,
   error: false,
-  styleGroup: { display: 'flex', flexDirection: 'column', gap: '8px', width: '200px' },
-  style: { 
-    backgroundColor: 'white', 
-    color: 'dark-grey', 
-    borderRadius: '5px', 
-    height: '25px' 
-  },
+  styleGroup: { display: 'flex', flexDirection: 'column', gap: '8px' },
   placeholder: 'Input...',
 };
