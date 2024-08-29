@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const InputLabel = ({ htmlFor, value, style }) => {
-
     return (
         <label htmlFor={htmlFor} style={style}>
         {value}

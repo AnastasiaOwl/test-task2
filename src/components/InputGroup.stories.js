@@ -9,8 +9,10 @@ export default {
       labelValue: { control: 'text' },
       inputId: { control: 'text' },
       inputValue: { control: 'text' },
+      annotationValue:{ control:'text'},
       disabled: { control: 'boolean' },
       focus: { control: 'boolean' },
+      error: {control: 'boolean'},
       errorFocus: {control: 'boolean'},
       style: { control: 'object' },
       placeholder: { control: 'text' },
@@ -24,9 +26,11 @@ export default {
   labelValue: 'Email',
   inputId: 'email-input',
   inputValue: '',
+  annotationValue: 'This is a hint text to help user.',
   disabled: false,
   focus: false,
   errorFocus: false,
+  error: false,
   styleGroup: { display: 'flex', flexDirection: 'column', gap: '8px' , width:'200px'},
   style: { backgroundColor: 'white', color: 'dark-grey', borderRadius: '5px', height: '25px'},
   placeholder: 'Input...',
@@ -41,6 +45,7 @@ export default {
   export const Error = Template.bind({});
   Error.args={
     ...Default.args,
+    error: true,
     style:{backgroundColor: 'white', borderColor: 'red', color: 'dark-grey', borderRadius: '5px', height: '25px'}
   }
 
@@ -59,8 +64,9 @@ export default {
 
   export const Playground = Template.bind({});
   Playground.args = {
-  labelValue: 'Label',
+  labelValue: 'Email',
   inputId: 'input-id',
+  annotationValue: 'This is a hint text to help user.',
   inputValue: '',
   disabled: false,
   focus: false,

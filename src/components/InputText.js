@@ -15,19 +15,16 @@ const InputText = ({ value, disabled, focus, error, errorFocus, style, placehold
 
       const computedStyle = {
         ...style,
-        ...(focus && !errorFocus ? {
+        ...(error || errorFocus ? {
+          border: '1.5px solid red',
+          boxShadow: errorFocus ? '0 0 8px 3px rgba(255, 0, 0, 0.7)' : 'none',
+        } : {}),
+        ...(!error && focus ? {
           border: '1px solid #007BFF',
           boxShadow: '0 0 8px 3px rgba(0, 123, 255, 0.7)',
         } : {}),
-        ...(errorFocus ? {
-          border: '1px solid red',
-          boxShadow: '0 0 8px 3px rgba(255, 0, 0, 0.7)',
-        } : {}),
-        ...(error ? {
-            border: '1.5px solid red',
-        }:{})
       };
-
+      
     return (
       <input 
       id={id}
